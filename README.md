@@ -1,4 +1,2 @@
 # Karthik-Sumith-Project
-Hello
-
-Psych bro
+Hotel booking website using MERN stack 
