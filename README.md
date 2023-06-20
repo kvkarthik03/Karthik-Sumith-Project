@@ -1,2 +1,2 @@
 # Karthik-Sumith-Project
-Hotel booking website using MERN stack 
+Hotel booking reservation website using MERN stack 
