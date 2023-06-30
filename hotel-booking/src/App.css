@@ -1,5 +1,5 @@
 .navbar{
-  background-color: beige;
+  font-family: 'Merriweather', serif;
 }
 
 img {
@@ -7,8 +7,71 @@ img {
 }
 
 
-.btn{
+/* .nav-item{
   position:absolute;
   top: 30px;
   right:30px;
+} */
+
+.right-aligned {
+  display:flex; 
+}
+
+@media(max-width:1000px){
+    .right-aligned{
+      display:flex;
+      flex-direction: column;
+    }
+}
+.navbutton {
+  font-size: large;
+}
+
+.navbutton:hover {
+  background-color: white;
+}
+
+.btn:hover{
+  color: white;
+}
+
+.site-name {
+  font-size: xx-large;
+  font-style: italic;
+  font-weight: 500;
+}
+
+#collapse {
+  background-color: white;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.bg-image {
+  background-image: url("/bgimage1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:500px;
+}
+
+/* .quote {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 8rem;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  
+} */
+
+.card {
+  width: 400px;
+  height: auto;
+}
+
+.hotelcards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
