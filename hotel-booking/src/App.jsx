@@ -38,14 +38,15 @@ function App() {
           </div>
         </nav>
       </div>
-
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <br></br>
+      <div class="row row-cols-1 row-cols-md-2 g-4 hotelcards">
         <div class="col">
           <div class="card h-100">
             <img src="/public/room1.jpg" class="card-img-top" alt="..."/>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Luxury Ambience Inn</h5>
+                <p class="card-text">
+Welcome to the opulent and exquisite Grand Royale Suite, where luxury meets sophistication. The room is bathed in warm, soft lighting, casting a gentle glow on the plush furnishings and fine accents</p>
               </div>
           </div>
         </div>
@@ -53,8 +54,8 @@ function App() {
           <div class="card h-100">
             <img src="/public/room2.jpg" class="card-img-top" alt="..."/>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a short card.</p>
+                <h5 class="card-title">Seaside Paradise Resort</h5>
+                <p class="card-text">Indulge in opulence with breathtaking ocean views, world-class amenities, and personalized service at our beachfront resort. Unwind in style and create lasting memories on your dream vacation.</p>
               </div>
           </div>
         </div>
@@ -62,8 +63,8 @@ function App() {
           <div class="card h-100">
             <img src="/public/room3.jpg" class="card-img-top" alt="..."/>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">Cityscape Boutique Hotel</h5>
+                <p class="card-text">Discover contemporary elegance at our centrally located hotel. Immerse yourself in the vibrant city life, while enjoying modern comforts, exquisite dining options, and easy access to major attractions.</p>
               </div>
           </div>
         </div>
@@ -71,14 +72,16 @@ function App() {
           <div class="card h-100">
             <img src="/public/room4.jpg" class="card-img-top" alt="..."/>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Luxe Haven Hotel</h5>
+                <p class="card-text">Welcome to the Luxe Haven Hotel, where indulgence and sophistication intertwine to create an unparalleled sanctuary for your senses.</p>
               </div>
           </div>
         </div>
       </div>
-    </>
+      
+      </>
   )
+  
 }
 
 export default App
