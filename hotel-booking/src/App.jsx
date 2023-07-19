@@ -2,44 +2,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import AboutUs from './AboutUs';
+import {Link} from 'react-router-dom';
+import Navbar from './components/Navbar';
+
 
 function App() {
   return (
     <>
     
       <div class="bg-image">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img width="100" height="75" class="d-inline-block align-text-top" src="/logo.jpg" alt="stay-zenith-logo" /></a>
-            <a class="navbar-brand site-name" href="#">StayZenith</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-              <ul class="navbar-nav">
-                <div class="right-aligned">
-                  <li class="nav-item">
-                    <a class="nav-link active navbutton" aria-current="page" href="#">Rooms</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active navbutton"><Link to="/aboutus">About us</Link></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active navbutton" href="#">Explore/Discover</a>
-                  </li>
-                  <li>
-                    <a class="nav-link active navbutton btn btn-dark" href="#">Sign Up/Login</a>
-                    {/* <button type="button" class="btn btn-dark">Sign Up/Log in</button> */}
-                  </li>
-
-                </div>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <Navbar></Navbar>
       </div>
       <br></br>
       <div class="row row-cols-1 row-cols-md-2 g-4 hotelcards">
