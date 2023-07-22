@@ -6,7 +6,13 @@ img {
   padding-right: 5px;
 }
 
+@media (min-width: 1025px) {
+  .h-custom-2 {
+    height: 100%;
+    }
+  }
 
+  
 /* .nav-item{
   position:absolute;
   top: 30px;
