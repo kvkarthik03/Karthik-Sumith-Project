@@ -4,10 +4,10 @@ function AboutUs() {
   return ( 
       <div>
         <Navbar></Navbar>
-        <div>AboutUs</div>
+        <div>ContactUs</div>
       </div>      
   )
 }
 
-export default AboutUs
+export default Contact
 

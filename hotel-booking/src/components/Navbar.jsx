@@ -11,8 +11,8 @@ function Navbar_1() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-0">
-            <Nav.Link href="#rooms">Rooms</Nav.Link>
-            <Nav.Link href="/aboutus">About Us</Nav.Link>
+            <Nav.Link href="/rooms">Rooms</Nav.Link>
+            <Nav.Link href="/contactus">Contact Us</Nav.Link>
             <Nav.Link href="/login">Login/Sign Up</Nav.Link>
           </Nav>
         </Navbar.Collapse>
