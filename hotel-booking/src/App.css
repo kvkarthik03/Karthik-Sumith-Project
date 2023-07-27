@@ -80,3 +80,9 @@ img {
 /* .hotelcards {
   margin-left: 5%;
 }  */
+
+.smallimg {
+  height: 200px;
+  width: 75%;
+  border-radius: 5px;
+}
