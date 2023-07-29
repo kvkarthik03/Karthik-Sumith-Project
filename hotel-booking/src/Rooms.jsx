@@ -16,46 +16,17 @@ function Rooms() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    // <div>
-    /* <Navbar></Navbar>
-    <MDBCarousel showControls fade>
-      <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={1}
-        src='./public/room1.jpg'
-        alt='...'
-      />
-      <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={2}
-        src='./public/room2.jpg'
-        alt='...'
-      />
-      <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={3}
-        src='./public/room3.jpg'
-        alt='...'
-      />
-      <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={4}
-        src='./public/room4.jpg'
-        alt='...'
-      />
-    </MDBCarousel>
-    <Button variant="primary">Book Now</Button> */
     <div>
       <Navbar></Navbar>
-      <div className='container text-left'>
-        <div className='row text-left'>
-          <div className='col-md-4 text-left'>
+      <div className='container' >
+        <div className='row'>
+          <div className='col-md-4'>
             <img
               src='./room1.jpg'
               className='smallimg'
             />
           </div>
-          <div className='col-md-7 text-left'>
+          <div className='col-md-7'>
             <h1>Luxury Ambience Inn</h1>
             <b>
               <p>Rating: ⭐⭐⭐⭐</p>
@@ -115,11 +86,6 @@ function Rooms() {
         </div>
 
       </div>
-
-
-
-
-
       <Footer></Footer>
     </div>
   )

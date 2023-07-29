@@ -1,0 +1,142 @@
+﻿[
+        {
+                "name": "Lemon Tree Premier Ulsoor Lake, Bengaluru",
+                "imageurls": [
+                        "https://m.lemontreehotels.com/getattachment/131802c3-fe49-47f8-bc5e-57f16b131c76/Deluxe-room.aspx",
+                        "https://m.lemontreehotels.com/getattachment/825d302c-f9d6-46bb-93d9-a07456ba2153/Banner-Two.aspx",
+                        "https://m.lemontreehotels.com/getattachment/f8cd3c96-d46b-4de5-8ba3-ee77b03e09b0/Discount-offer.aspx"
+                ],
+                "rentperday": 2000,
+                "type": "Deluxe",
+                "maxcount": 3,
+                "phonenumber": 123456789,
+                "currentbookings": [],
+                "description": "Located in the city’s vibrant business district, Lemon Tree Premier is a lakefront property offering a luxurious stay experience."
+        },
+        {
+                "name": "Hotel Milan International, Mumbai",
+                "imageurls": [
+                        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/97/09/05/hotel-milan-international.jpg?w=700&h=-1&s=1",
+                        "https://media-cdn.tripadvisor.com/media/photo-s/19/87/cd/fc/hotel-milan-international.jpg",
+                        "https://gos3.ibcdn.com/1787b7f6e9dd11e9991e0242ac110002.jpg"
+                ],
+                "rentperday": 1500,
+                "type": "Deluxe",
+                "maxcount": 2,
+                "phonenumber": 987654321,
+                "currentbookings": [],
+                "description": "Hotel Milan International enables guests to truly immerse themselves in the city’s thriving cultural landscape with close proximity to the domestic and international Airports along with connectivity to all the Business Centers across the city."
+        },
+        {
+                "name": "Hotel Sunday Inn, Jaipur",
+                "imageurls": [
+                        "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201405031342325086-0a8beb704fdb11ebbf120242ac110002.jpg",
+                        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/ce/f3/cf/zo-rooms-mansarovar.jpg?w=700&h=-1&s=1",
+                        "https://media-cdn.tripadvisor.com/media/photo-s/07/5c/79/ce/hotel-sunday-inn.jpg"
+                ],
+                "rentperday": 1500,
+                "type": "Deluxe",
+                "maxcount": 2,
+                "phonenumber": 567890123,
+                "currentbookings": [],
+                "description": "Enjoy a pleasant stay at this budget-friendly hotel in Jaipur offering a restaurant, business center & comfy rooms."
+        },
+        {
+                "name": "Royal Plaza, Delhi",
+                "imageurls": [
+                        "https://www.hoteltheroyalplaza.com/images/aboutbanner2.jpg",
+                        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/205269330.jpg?k=02227f79f7140e518a577319d59e64c80f73c898270e8fbe3d53fb9d51834764&o=&hp=1",
+                        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/208999616.jpg?k=b54d9fc4937bd88069fa2ac2e201125cff5a8a9152208e7ffaa8086c43c13658&o=&hp=1"
+                ],
+                "rentperday": 2800,
+                "type": "Deluxe",
+                "maxcount": 3,
+                "phonenumber": 234567890,
+                "currentbookings": [],
+                "description": "Embrace the grandeur of Royal Plaza, a regal abode in the heart of Delhi's bustling streets."
+        },
+        {
+                "name": "Paradise Village Beach Resort, Goa",
+                "imageurls": [
+                        "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/200709211135582761-4568-ddbd9e3c5c2911e9ace60242ac110006.jpg",
+                        "https://media-cdn.tripadvisor.com/media/photo-s/28/eb/39/6a/main-outdoor-view-photo.jpg",
+                        "https://www.bestgoadeals.com/uploads/hotel/pics/330_pic_paradise_village-goa--4-.jpg"
+                ],
+                "rentperday": 5500,
+                "type": "Deluxe",
+                "maxcount": 2,
+                "phonenumber": 678901234,
+                "currentbookings": [],
+                "description": "Indulge in luxury and experience the coastal paradise at Paradise Village Beach Resort, Goa."
+        },
+        {
+                "name": "Park Inn by Radisson, New Delhi",
+                "imageurls": [
+                        "https://media.radissonhotels.net/image/park-inn-by-radisson-new-delhi-ip-extension/guest-room/16256-114828-f63774266_3xl.jpg",
+                        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/03/87/2f/park-inn-by-radisson.jpg?w=700&h=-1&s=1",
+                        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/234612969.jpg?k=74272a04f2548ffb7578fed7a02d19c4102aae386328f86119cd0ee92b968d8e&o=&hp=1"
+                ],
+                "rentperday": 7700,
+                "type": "nondeluxe",
+                "maxcount": 2,
+                "phonenumber": 789012345,
+                "currentbookings": [],
+                "description": "Enjoy the skyline views of New Delhi at Park Inn, situated in the heart of the city."
+        },
+        {
+                "name": "Mountain View Lodge, Uttarakhand",
+                "imageurls": [
+                        "https://media-cdn.tripadvisor.com/media/photo-s/1c/be/50/7f/super-deluxe-room.jpg",
+                        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/d9/46/df/1st-view-of-hotel-as.jpg?w=700&h=-1&s=1",
+                        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/249565024.jpg?k=849b21df54ccbf637184cfdb981a20c7a5ae02e355986755c2ef19e92a570290&o=&hp=1"
+                ],
+                "rentperday": 4000,
+                "type": "Deluxe",
+                "maxcount": 4,
+                "phonenumber": 890123456,
+                "currentbookings": [],
+                "description": "Experience nature's beauty at Mountain View Lodge, surrounded by picturesque landscapes in Uttarakhand."
+        },
+        {
+                "name": "Zen Retreat, Jaipur",
+                "imageurls": [
+                        "https://media-cdn.tripadvisor.com/media/photo-s/1d/3d/05/e5/rooftop-pool-area.jpg",
+                        "https://cdn.bookretreats.com/assets/photo/retreat/0m/11k/11627/p_254488/1000_1551019738.jpg?width=1200",
+                        "https://cdn.bookretreats.com/assets/photo/retreat/0m/12k/12177/p_270279/1000_1553767676.jpg?width=1200"
+                ],
+                "rentperday": 3200,
+                "type": "nondeluxe",
+                "maxcount": 3,
+                "phonenumber": 901234567,
+                "currentbookings": [],
+                "description": "Discover serenity and traditional Rajasthani hospitality at Zen Retreat, Jaipur."
+        },
+        {
+                "name": "Bamboo Dale, Resort, Kerela",
+                "imageurls": [
+                        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/43/a5/5c/tree-house.jpg?w=700&h=-1&s=1",
+                        "https://www.bamboodale.com/images/accommodation/hme-accomm-new.jpg",
+                        "https://www.keralatourism.org/images/service-providers/photos/property-3869-profile-18395-20181207073738.jpg"
+                ],
+                "rentperday": 2700,
+                "type": "deluxe",
+                "maxcount": 2,
+                "phonenumber": 345678901,
+                "currentbookings": [],
+                "description": "Experience the tranquil backwaters and lush greenery at Bamboo Dale Resort, Kerala."
+        },
+        {
+                "name": "Taj Exotica Resort and Spa, Andamans",
+                "imageurls": [
+                        "https://www.tajhotels.com/content/dam/luxury/hotels/taj-exotica-andamans/images/new-gallery/luxury-villa.jpg",
+                        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/194408977.jpg?k=3fe3bfc6f48f8e4d8615fbe11b2dbee21019848d731530a545e7f4a9d6481fcd&o=&hp=1",
+                        "https://www.kayak.com/rimg/himg/93/a2/ce/leonardo-4739578-156012705-967510.jpg?width=1366&height=768&crop=true"
+                ],
+                "rentperday": 5600,
+                "type": "nondeluxe",
+                "maxcount": 4,
+                "phonenumber": 456789012,
+                "currentbookings": [],
+                "description": "Relax in the tropical paradise of Andaman and Nicobar Islands at Taj Exotica Resort and Spa,Andamans"
+        }
+]
