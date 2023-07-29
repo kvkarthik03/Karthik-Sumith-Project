@@ -86,3 +86,11 @@ img {
   width: 75%;
   border-radius: 5px;
 }
+
+.bigimg {
+  height: 400px;
+}
+
+.btn {
+  margin: 5px;
+}

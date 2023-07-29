@@ -10,6 +10,7 @@ import ContactUs from './ContactUs.jsx';
 import Login from './login.jsx';
 import SignUp from './signup.jsx';
 import Rooms from './Rooms.jsx';
+import Bookingscreen from './Bookingscreen.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "rooms",
     element: <Rooms/>
+  },
+  {
+    path: "bookingscreen",
+    element: <Bookingscreen/>
   }
 ]);
 

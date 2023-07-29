@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-//import {Modal, Button} from 'react-bootstrap'
+import { Modal, Carousel } from 'react-bootstrap'
 import {
   MDBCarousel,
   MDBCarouselItem,
@@ -8,13 +8,13 @@ import {
 import Button from 'react-bootstrap/esm/Button';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { Link, Router } from 'react-router-dom';
 
 function Rooms() {
-  const [showCarousel, setShowCarousel] = useState(false);
+  const [show, setShow] = useState(false);
 
-  const handleImageClick = () => {
-    setShowCarousel(true);
-  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     // <div>
     /* <Navbar></Navbar>
@@ -50,7 +50,7 @@ function Rooms() {
       <div className='container text-left'>
         <div className='row text-left'>
           <div className='col-md-4 text-left'>
-          <img
+            <img
               src='./room1.jpg'
               className='smallimg'
             />
@@ -63,37 +63,64 @@ function Rooms() {
             </b>
 
             <div style={{ float: 'right' }}>
-              <p>Price: Rs. 1000 per day</p>
-              <button className='btn btn-primary'>Book Now</button>
+              <b><p>Price: Rs. 1000 per day</p></b>
+              <Link to="/bookingscreen" class="link-info">
+                <button className="btn btn-primary m-2">Book Now</button>
+              </Link>
+              <button className='btn btn-primary' onClick={handleShow}>View Details</button>
             </div>
           </div>
 
 
+          <Modal show={show} onHide={handleClose} size='lg'>
+            <Modal.Header closeButton>
+              <Modal.Title>Luxury Ambience Inn</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Carousel>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100 bigimg"
+                    src="./room2.jpg"
+                    alt="First slide"
+                  />
+
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100 bigimg"
+                    src="./room3.jpg"
+                    alt="Second slide"
+                  />
+
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100 bigimg"
+                    src="./room4.jpg"
+                    alt="Third slide"
+                  />
+
+                </Carousel.Item>
+              </Carousel>
+              <p>This is Room Description</p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+
+            </Modal.Footer>
+          </Modal>
         </div>
 
       </div>
 
+
+
+
+
       <Footer></Footer>
-
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
-
     </div>
   )
 }
