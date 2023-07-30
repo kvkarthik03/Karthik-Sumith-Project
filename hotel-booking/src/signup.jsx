@@ -13,8 +13,38 @@ import {
     from 'mdb-react-ui-kit';
 import Login from './login';
 import { Link, Router } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
 
 function SignUp() {
+    const[name, setname] = useState('')
+    const[email, setemail] = useState('')
+    const[password, setpassword] = useState('')
+    const[cpassword, setcpassword] = useState('')
+
+    async function register() {
+        if(password == cpassword)
+        {
+            const user = {
+                name,
+                email,
+                password,
+                cpassword
+            }
+            
+            try {
+                const result = await axios.post('http://localhost:5000/api/users/register', user).data
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        else {
+            alert('Passwords do not match')
+        }
+    }
+
     return (
         <MDBContainer fluid className='p-4'>
 
@@ -49,18 +79,18 @@ function SignUp() {
 
                             <MDBRow>
                                 <MDBCol col='6'>
-                                    <MDBInput wrapperClass='mb-4' label='First name' id='form1' type='text' />
-                                </MDBCol>
-
-                                <MDBCol col='6'>
-                                    <MDBInput wrapperClass='mb-4' label='Last name' id='form1' type='text' />
+                                    <MDBInput wrapperClass='mb-4' label='Name' id='form1' type='text'
+                                    value={name} onChange={(e)=>{setname(e.target.value)}} />
                                 </MDBCol>
                             </MDBRow>
 
-                            <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email' />
-                            <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password' />
-
-                            <MDBBtn className='w-100 mb-4' size='md'>Sign up</MDBBtn>
+                            <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email' 
+                            value={email} onChange={(e)=>{setemail(e.target.value)}}/>
+                            <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password' 
+                            value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
+                            <MDBInput wrapperClass='mb-4' label='Confirm Password' id='form1' type='password'
+                            value={cpassword} onChange={(e)=>{setcpassword(e.target.value)}} />
+                            <center><button className='btn btn-primary' size='md' onClick={register}>Sign up</button></center>
 
                             <div className="text-center">
 

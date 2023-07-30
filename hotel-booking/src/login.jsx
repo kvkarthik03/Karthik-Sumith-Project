@@ -10,8 +10,22 @@ import {
 from 'mdb-react-ui-kit';
 import { Link, Router } from 'react-router-dom';
 import SignUp from './signup';
+import { useState, useEffect } from 'react';
 
 function Login() {
+    const[email, setemail] = useState('')
+    const[password, setpassword] = useState('')
+
+    function login() {
+        
+            const user = {
+                email,
+                password
+            }
+            console.log(user)
+        
+    }
+  
   return (
     <MDBContainer fluid>
       <MDBRow>
@@ -28,10 +42,12 @@ function Login() {
 
             <center><h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Log in</h3></center>
 
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
+            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg" 
+            value={email} onChange={(e)=>{setemail(e.target.value)}}/>
+            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"
+            value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
 
-            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='info' size='lg'>Login</MDBBtn>
+            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='info' size='lg' onClick={login}>Login</MDBBtn>
             <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="#!">Forgot password?</a></p>
             <p className='ms-5'>Don't have an account? <Link to = "/signup" class="link-info">Sign Up</Link></p>
 
