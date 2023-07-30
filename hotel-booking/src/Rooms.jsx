@@ -1,94 +1,48 @@
-import React from 'react';
-import { useState } from 'react';
-import { Modal, Carousel } from 'react-bootstrap'
-import {
-  MDBCarousel,
-  MDBCarouselItem,
-} from 'mdb-react-ui-kit';
-import Button from 'react-bootstrap/esm/Button';
+import React, { useState, useEffect } from 'react'
+import axios from "axios";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { Link, Router } from 'react-router-dom';
+import Room from './components/Room'
+//import axios from './axiosInstance';
+// const instance = axios.create({
+//   baseURL: 'http://localhost:5000',
+// });
 
 function Rooms() {
-  const [show, setShow] = useState(false);
+  const [rooms, setrooms] = useState([])
+  const [loading, setloading] = useState()
+  const [error, seterror] = useState()
+  useEffect(() => {
+    const fetchData = async() => {
+    try {
+      setloading(true)
+      const data = (await axios.get('http://localhost:5000/api/rooms/getallrooms')).data
+      setrooms(data)
+      setloading(false)
+    
+    } catch (error) {
+      seterror(true)
+      console.log(error)
+      setloading(false)
+    }
+  }
+  fetchData();
+  }, [])
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <div>
       <Navbar></Navbar>
-      <div className='container' >
-        <div className='row'>
-          <div className='col-md-4'>
-            <img
-              src='./room1.jpg'
-              className='smallimg'
-            />
-          </div>
-          <div className='col-md-7'>
-            <h1>Luxury Ambience Inn</h1>
-            <b>
-              <p>Rating: ⭐⭐⭐⭐</p>
-              <p>Room Type: Deluxe A/c</p>
-            </b>
+      <div className='row'>
+        {loading ? (<h1>Loading...</h1>) : error ? (<h1>Error</h1>) : (rooms.map(room => {
+          return <div className='col-md-9 mt-2'>
+              <Room room={room}/>
+            </div>; 
 
-            <div style={{ float: 'right' }}>
-              <b><p>Price: Rs. 1000 per day</p></b>
-              <Link to="/bookingscreen" class="link-info">
-                <button className="btn btn-primary m-2">Book Now</button>
-              </Link>
-              <button className='btn btn-primary' onClick={handleShow}>View Details</button>
-            </div>
-          </div>
-
-
-          <Modal show={show} onHide={handleClose} size='lg'>
-            <Modal.Header closeButton>
-              <Modal.Title>Luxury Ambience Inn</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Carousel>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100 bigimg"
-                    src="./room2.jpg"
-                    alt="First slide"
-                  />
-
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100 bigimg"
-                    src="./room3.jpg"
-                    alt="Second slide"
-                  />
-
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100 bigimg"
-                    src="./room4.jpg"
-                    alt="Third slide"
-                  />
-
-                </Carousel.Item>
-              </Carousel>
-              <p>This is Room Description</p>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-
-            </Modal.Footer>
-          </Modal>
-        </div>
-
+        }))}
       </div>
       <Footer></Footer>
     </div>
   )
 }
 
-export default Rooms
+export default Rooms        

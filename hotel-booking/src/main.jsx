@@ -11,7 +11,8 @@ import Login from './login.jsx';
 import SignUp from './signup.jsx';
 import Rooms from './Rooms.jsx';
 import Bookingscreen from './Bookingscreen.jsx';
-
+import Room from './components/Room.jsx';
+import axios from "axios";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,7 +37,12 @@ const router = createBrowserRouter([
   {
     path: "bookingscreen",
     element: <Bookingscreen/>
+  },
+  {
+    path: "room",
+    element: <Room/>
   }
+  
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

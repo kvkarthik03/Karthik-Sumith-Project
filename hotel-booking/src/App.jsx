@@ -5,6 +5,8 @@ import './App.css'
 import {Link} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { BrowserRouter, Route} from 'react-router-dom';
+
 
 
 function App() {
@@ -56,8 +58,11 @@ function App() {
         </div>
       </div>
     <Footer></Footer>
-      
-    </>
+
+      {/* <Navbar></Navbar>
+      <Link to='/homescreen'>Click</Link> */}
+      </>
+
   )
 
 }
