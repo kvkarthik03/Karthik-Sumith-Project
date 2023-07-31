@@ -21,8 +21,8 @@ router.post("/login", async(req, res) => {
         const user = await User.findOne({email: email, password: password})
         if(user) {
             const temp = {
-                name:user.name,
-                email:user.email,
+                name : user.name,
+                email : user.email,
                 _id : user._id
             }
             res.send(temp)

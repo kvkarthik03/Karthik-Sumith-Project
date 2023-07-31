@@ -11,12 +11,14 @@ import {
 from 'mdb-react-ui-kit';
 import { Link, Router } from 'react-router-dom';
 import SignUp from './signup';
+import Error from './components/Error';
 import { useState, useEffect } from 'react';
 
 function Login() {
     const[email, setemail] = useState('')
     const[password, setpassword] = useState('')
-
+    const [loading, setloading] = useState(false);
+    const [error, seterror] = useState();
     async function login() {
         
             const user = {
@@ -25,10 +27,17 @@ function Login() {
             }
             console.log(user)
             try {
-              const result = await axios.post('http://localhost:5000/api/users/login', user).data
+              setloading(true)
+              const result = (await axios.post('http://localhost:5000/api/users/login', user)).data
+              setloading(false)
+
+              localStorage.setItem('currentUser', JSON.stringify(result));
+              window.location.href='/'
               // console.log(result.data);
           } catch (error) {
               console.log(error)
+              setloading(false)
+              seterror(true)
           }
     }
   
@@ -45,7 +54,7 @@ function Login() {
           </div>
 
           <div className='d-flex flex-column justify-content-center h-custom-1 w-75 pt-4'>
-
+            {error && (<Error message="Invalid Credentials"/>)}
             <center><h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Log in</h3></center>
 
             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg" 
