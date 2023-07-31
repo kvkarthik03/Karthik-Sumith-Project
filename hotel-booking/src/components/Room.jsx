@@ -31,7 +31,7 @@ function Room({ room }) {
 
                         <div style={{ float: 'right' }}>
                             <b><p>Price: Rs. {room.rentperday} per day</p></b>
-                            <Link to="/bookingscreen" class="link-info">
+                            <Link to={`/bookingscreen/${room._id}`} class="link-info">
                                 <button className="btn btn-primary m-2">Book Now</button>
                             </Link>
                             <button className='btn btn-primary' onClick={handleShow}>View Details</button>

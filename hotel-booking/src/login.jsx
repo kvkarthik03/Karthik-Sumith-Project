@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import {
   MDBBtn,
   MDBContainer,
@@ -16,14 +17,19 @@ function Login() {
     const[email, setemail] = useState('')
     const[password, setpassword] = useState('')
 
-    function login() {
+    async function login() {
         
             const user = {
                 email,
                 password
             }
             console.log(user)
-        
+            try {
+              const result = await axios.post('http://localhost:5000/api/users/login', user).data
+              // console.log(result.data);
+          } catch (error) {
+              console.log(error)
+          }
     }
   
   return (

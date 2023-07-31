@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import {
     MDBBtn,
     MDBContainer,
@@ -14,7 +15,6 @@ import {
 import Login from './login';
 import { Link, Router } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 
 
@@ -31,11 +31,12 @@ function SignUp() {
                 name,
                 email,
                 password,
-                cpassword
-            }
+                cpassword,
+            };
             
             try {
                 const result = await axios.post('http://localhost:5000/api/users/register', user).data
+                // console.log(result.data);
             } catch (error) {
                 console.log(error)
             }

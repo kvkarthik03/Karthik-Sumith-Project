@@ -1,31 +1,38 @@
 const express = require("express");
-const router = express.Router;
+const router = express.Router();
 const User = require('../models/user');
-
+const app = express();
+const cors = require("cors");
+app.use(cors());
 router.post("/register", async(req, res) => {
-    const newuser = new User(req.body)
+    const newuser = new User({name: req.body.name, email: req.body.email, password: req.body.password})
     try {
         const user = await newuser.save()
         res.send('User Registered Successfully')
     } catch (error) {
-        return res.status(400).json({error})
+        return res.status(400).json({error});
     }
-})
+});
 
 router.post("/login", async(req, res) => {
     const {email, password} = req.body
 
     try {
-        const user = await User.findone({email: email, password: password})
+        const user = await User.findOne({email: email, password: password})
         if(user) {
-            res.send(user)
+            const temp = {
+                name:user.name,
+                email:user.email,
+                _id : user._id
+            }
+            res.send(temp)
         }
         else {
-            return res.status(400).json({message: 'Login Failed'})
+            return res.status(400).json({message: 'Login Failed'});
         }
     } catch (error) {
-        return res.status(400).json({error})
+        return res.status(400).json({error});
     }
-})
+});
 
-module.exports = router
+module.exports = router;
