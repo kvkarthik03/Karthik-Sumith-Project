@@ -2,11 +2,23 @@ import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import moment from 'moment';
 function Bookingscreen() {
   const { roomid } = useParams();
+  // const { rentperday } = useParams();
+  const { fromdate } = useParams();
+  const { todate } = useParams();
   const [loading, setloading] = useState(true);
   const [error, seterror] = useState();
   const [room, setroom] = useState();
+
+  const firstdate = moment(fromdate, 'DD-MM-YYYY')
+  const lastdate = moment(todate, 'DD-MM-YYYY')
+
+  const totaldays = moment.duration(lastdate.diff(firstdate)).asDays() + 1
+  const totalamount = room ?  totaldays * room.rentperday : 0;
+  // const {totaldays} = moment.duration(todate.diff(fromdate))
+
   useEffect(async () => {
     try {
       setloading(true)
@@ -32,19 +44,19 @@ function Bookingscreen() {
               <div>
                 <h1>Booking Details</h1>
                 <i><p>Name: </p>
-                  <p>From Date : </p>
-                  <p>To Date : </p>
+                  <p>From Date : {fromdate}</p>
+                  <p>To Date : {todate}</p>
                   <p>Max Count : {room.maxcount} </p>
                 </i>
               </div>
               <div>
-                <hr/>
+                <hr />
                 <h1>Amount</h1>
-                <i><p>Total days : </p>
-                <p>Rent per day : ₹{room.rentperday}</p>
-                <p>Total amount : </p></i>
+                <i><p>Total days : {totaldays}</p>
+                  <p>Rent per day : ₹{room.rentperday}</p>
+                  <p>Total amount : ₹{totalamount}</p></i>
               </div>
-              <div style={{float:'right'}}>
+              <div style={{ float: 'right' }}>
                 <button className='btn btn-primary'>Pay Now</button>
               </div>
             </div>

@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     element: <Rooms/>
   },
   {
-    path: "bookingscreen/:roomid",
+    path: "bookingscreen/:roomid/:fromdate/:todate",
     element: <Bookingscreen/>
   },
   {
