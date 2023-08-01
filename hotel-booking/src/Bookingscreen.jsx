@@ -30,6 +30,24 @@ function Bookingscreen() {
       seterror(true)
     }
   }, [])
+
+  async function bookRoom() {
+    const bookingDetails = {
+      room, 
+      userid: JSON.parse(localStorage.getItem('currentUser'))._id,
+      fromdate,
+      todate,
+      totalamount,
+      totaldays
+    }
+
+    try {
+      const result = await axios.post('http://localhost:5000/api/bookings/bookroom', bookingDetails)
+    } catch (error) {
+      
+    }
+
+  }
   return (
     <div>
       <Navbar></Navbar>
@@ -43,7 +61,7 @@ function Bookingscreen() {
             <div className="col-md-5 mx-auto">
               <div>
                 <h1>Booking Details</h1>
-                <i><p>Name: </p>
+                <i><p>Name: {JSON.parse(localStorage.getItem('currentUser')).name}</p>
                   <p>From Date : {fromdate}</p>
                   <p>To Date : {todate}</p>
                   <p>Max Count : {room.maxcount} </p>
@@ -57,7 +75,7 @@ function Bookingscreen() {
                   <p>Total amount : ₹{totalamount}</p></i>
               </div>
               <div style={{ float: 'right' }}>
-                <button className='btn btn-primary'>Pay Now</button>
+                <button className='btn btn-primary' onClick={bookRoom}>Pay Now</button>
               </div>
             </div>
 
