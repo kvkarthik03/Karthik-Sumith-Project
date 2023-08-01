@@ -17,8 +17,10 @@ function Rooms() {
   const [loading, setloading] = useState()
   const [error, seterror] = useState()
 
-  const[fromdate, setfromdate] = useState()
-  const[todate, settodate] = useState()
+  const [fromdate, setfromdate] = useState()
+  const [todate, settodate] = useState()
+
+  const [duplicaterooms, setduplicaterooms] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +28,7 @@ function Rooms() {
         setloading(true)
         const data = (await axios.get('http://localhost:5000/api/rooms/getallrooms')).data
         setrooms(data)
+        setduplicaterooms(data)
         setloading(false)
 
       } catch (error) {
@@ -37,27 +40,70 @@ function Rooms() {
     fetchData();
   }, [])
 
-function filterByDate(dates) {
-  setfromdate(dates[0].format('DD-MM-YYYY'))
-  settodate(dates[1].format('DD-MM-YYYY'))
-}
+  function filterByDate(dates) {
+    setfromdate(dates[0].format('DD-MM-YYYY'))
+    settodate(dates[1].format('DD-MM-YYYY'))
+
+       //tempRooms
+       var temprooms = [];
+  
+       for (const room of duplicaterooms) {
+         var availability = false;
+     
+         if (room.currentbookings.length > 0) {
+           for ( const booking of room.currentbookings) {
+             //check between or equal to dates
+             if (
+               !moment(moment(dates[0]).format("DD-MM-YYYY")).isBetween(
+                 booking.fromdate,
+                 booking.todate
+               ) &&
+               !moment(moment(dates[1]).format("DD-MM-YYYY")).isBetween(
+                 booking.fromdate,
+                 booking.todate
+               )
+             ) {
+               
+               if (
+                 dates[0].format("DD-MM-YYYY") !== booking.fromdate &&
+                 dates[0].format("DD-MM-YYYY") !== booking.todate &&
+                 dates[1].format("DD-MM-YYYY") !== booking.fromdate &&
+                 dates[1].format("DD-MM-YYYY") !== booking.todate
+               ) {
+                 availability = true;
+               }
+             }
+           }
+         } else {
+           availability = true;
+         }
+     
+         if (availability === true) {
+           temprooms.push(room);
+         }
+       }
+     
+       setrooms(temprooms);
+     }
+  
+
 
   return (
     <div>
-      
+
 
       <Navbar></Navbar>
 
       <div className='row m-5'>
         <div className="col-md-3">
-          <RangePicker format='DD-MM-YYYY' onChange={filterByDate}/>
+          <RangePicker format='DD-MM-YYYY' onChange={filterByDate} />
         </div>
       </div>
 
       <div className='row'>
         {loading ? (<h1>Loading...</h1>) : error ? (<h1>Error</h1>) : (rooms.map(room => {
           return <div className='col-md-9 mt-2'>
-            <Room room={room} fromdate={fromdate} todate={todate}/>
+            <Room room={room} fromdate={fromdate} todate={todate} />
           </div>;
 
         }))}

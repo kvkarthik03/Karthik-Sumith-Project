@@ -42,42 +42,39 @@ function Login() {
     }
   
   return (
+    <div className='loginbg'>
     <MDBContainer fluid>
       <MDBRow>
 
         <MDBCol sm='6'>
 
           <div className='d-flex flex-row ps-5 pt-5'>
-          <img width="100" height="75" class="d-inline-block align-text-top" src="/logo.jpg" alt="stay-zenith-logo" />
+          <Link to ='/'><img width="100" height="75" class="d-inline-block" src="/logo.jpg" alt="stay-zenith-logo" />
             <MDBIcon fas icon="crow fa-3x me-3" style={{ color: '#709085' }}/>
-            <span className="h1 fw-bold mb-0">StayZenith</span>
+            <span className="h1 mx-auto" style={{color: 'black'}}>StayZenith</span></Link>
           </div>
 
-          <div className='d-flex flex-column justify-content-center h-custom-1 w-75 pt-4'>
+          <center><div className='d-flex flex-column justify-content-center h-custom-1 w-75 pt-4'>
             {error && (<Error message="Invalid Credentials"/>)}
             <center><h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Log in</h3></center>
 
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg" 
+            <MDBInput wrapperClass='mb-4 mx-5 w-100' placeholder='Email address' id='formControlLg' type='email' size="lg" 
             value={email} onChange={(e)=>{setemail(e.target.value)}}/>
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"
+            <MDBInput wrapperClass='mb-4 mx-5 w-100' placeholder='Password' id='formControlLg' type='password' size="lg"
             value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
 
-            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='info' size='lg' onClick={login}>Login</MDBBtn>
-            <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p className='ms-5'>Don't have an account? <Link to = "/signup" class="link-info">Sign Up</Link></p>
+            <button className="btn btn-primary px-5 mx-5 w-100" color='info' size='lg' onClick={login}>Login</button>
+            {/* <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="#!">Forgot password?</a></p> */}
+            <div className="noaccnt mx-5 w-100" ><p className='ms-5'>Don't have an account? <Link to = "/signup" class="link-info">Sign Up</Link></p></div>
 
-          </div>
+          </div></center>
 
-        </MDBCol>
-
-        <MDBCol sm='6' className='d-none d-sm-block px-0'>
-          <img src="loginimage.jpg"
-            alt="Login image" height="100%" className="w-100" style={{objectFit: 'cover', objectPosition: 'left'}} />
         </MDBCol>
 
       </MDBRow>
 
     </MDBContainer>
+    </div>
   );
 }
 

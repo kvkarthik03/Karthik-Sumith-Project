@@ -64,23 +64,21 @@ function SignUp() {
         <div>
             {error && (<Error />)}
 
-            <div>
+            <div className='signupbgimage'>
                 <MDBContainer fluid className='p-4'>
-                    
+
                     <div className='d-flex flex-row ps-5 pt-5'>
-                        <a href='/'>
-                            <img width="100" height="75" class="d-inline-block align-text-top" src="/logo.jpg" alt="stay-zenith-logo" />
+                        <Link to='/'><img width="100" height="75" class="d-inline-block" src="/logo.jpg" alt="stay-zenith-logo" />
                             <MDBIcon fas icon="crow fa-3x me-3" style={{ color: '#709085' }} />
-                            <span className="h1 fw-bold mb-0">StayZenith</span>
-                        </a>
+                            <span className="h1 mx-auto loginheading">StayZenith</span></Link>
                     </div>
-                    
+
                     <MDBRow>
-                    
-                        <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
+
+                        <MDBCol md='6' className='text-center text-md-start d-flex flex-column '>
 
                             <h1 className="my-5 display-3 fw-bold ls-tight px-3">
-                                The best experience <br />
+                            <span className="text-primary">The best experience</span> <br />
                                 <span className="text-primary">for your vacations!</span>
                             </h1>
 
@@ -92,7 +90,7 @@ function SignUp() {
                         </MDBCol>
 
                         <MDBCol md='6'>
-                        {success && (<Success message="Registration Success"/>)}
+                            {success && (<Success message="Registration Success" />)}
                             <MDBCard className='my-5'>
                                 <MDBCardBody className='p-5'>
 

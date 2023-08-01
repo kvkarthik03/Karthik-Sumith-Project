@@ -99,3 +99,26 @@ h1 {
   font-size: 20px;
 }
 
+.loginheading {
+  color: white;
+  text-decoration: none;
+}
+
+.signupbgimage {
+  background-image: url("https://t4.ftcdn.net/jpg/03/83/84/49/240_F_383844937_VVv0WYa8qmKZZNfTS3P6dwnIeAzQRg3n.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loginbg {
+  background-image: url("loginimage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+}
+
+.noaccnt{
+  background-color: snow;
+  justify-content: center;
+  align-items: center;
+}
