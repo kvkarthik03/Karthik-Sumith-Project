@@ -13,8 +13,8 @@ function Room({ room, fromdate, todate }) {
     return (
         <div>
 
-            <div className='container' >
-                <div className='row'>
+            <div className='container room-card' >
+                <div className='row row-text'>
                     <div className='col-md-4'>
                         <img
                             src={room.imageurls[0]}

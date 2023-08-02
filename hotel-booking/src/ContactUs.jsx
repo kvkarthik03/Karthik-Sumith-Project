@@ -19,7 +19,7 @@ import Footer from './components/Footer';
 
 export default function ContactUs() {
   return (
-    <div>
+    <div className="contact-img">
     <Navbar></Navbar>
     <center><form id='form' className='text-center' style={{ width: '100%', maxWidth: '300px' }}>
       <h2>Contact us</h2>

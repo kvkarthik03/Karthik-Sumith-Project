@@ -45,7 +45,7 @@ function Rooms() {
     settodate(dates[1].format('DD-MM-YYYY'))
 
        //tempRooms
-       var temprooms = [];
+       var temprooms = []
   
        for (const room of duplicaterooms) {
          var availability = false;
@@ -74,28 +74,29 @@ function Rooms() {
                }
              }
            }
-         } else {
-           availability = true;
-         }
+         } 
+         
      
-         if (availability === true) {
+         if (availability == true || room.currentbookings.length == 0) {
            temprooms.push(room);
          }
+         setrooms(temprooms);
        }
      
-       setrooms(temprooms);
+       
      }
   
 
 
   return (
-    <div>
+    <div className='roomsbgimage'>
 
 
       <Navbar></Navbar>
 
-      <div className='row m-5'>
+      <div className='row m-5 justify-content-center'>
         <div className="col-md-3">
+          <b><p>Enter your Check In and Check Out Dates</p></b>
           <RangePicker format='DD-MM-YYYY' onChange={filterByDate} />
         </div>
       </div>

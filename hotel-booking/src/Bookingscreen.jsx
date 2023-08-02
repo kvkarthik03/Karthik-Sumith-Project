@@ -17,9 +17,15 @@ function Bookingscreen() {
 
   const totaldays = moment.duration(lastdate.diff(firstdate)).asDays() + 1
   const totalamount = room ?  totaldays * room.rentperday : 0;
+  const [isPaymentDone, setIsPaymentDone] = useState(false);
   // const {totaldays} = moment.duration(todate.diff(fromdate))
 
-  useEffect(async () => {
+
+
+  
+
+  useEffect(() => {
+    async function fetchRoomData() {
     try {
       setloading(true)
       const data = (await axios.post("http://localhost:5000/api/rooms/getroombyid", { roomid })).data
@@ -29,9 +35,21 @@ function Bookingscreen() {
       setloading(false)
       seterror(true)
     }
-  }, [])
+  }
+
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser) {
+      // User is not logged in, navigate to the login page
+      window.location.href = '/login'; 
+    } else {
+      // User is logged in, fetch room data
+      fetchRoomData();
+    }
+
+}, []);
 
   async function bookRoom() {
+    setIsPaymentDone(true);
     const bookingDetails = {
       room, 
       userid: JSON.parse(localStorage.getItem('currentUser'))._id,
@@ -47,9 +65,11 @@ function Bookingscreen() {
       
     }
 
+    document.getElementById('paybutton').innerHTML = "Room Booked Successfully";
+
   }
   return (
-    <div>
+    <div className='roomsbgimage'>
       <Navbar></Navbar>
       <div className='container'>
         {loading ? (<h1>Loading...</h1>) : error ? (<h1>Error</h1>) : (<div>
@@ -75,7 +95,14 @@ function Bookingscreen() {
                   <p>Total amount : ₹{totalamount}</p></i>
               </div>
               <div style={{ float: 'right' }}>
-                <button className='btn btn-primary' onClick={bookRoom}>Pay Now</button>
+              {isPaymentDone ? (
+                  <p className="booking-success">Room Booked Successfully!</p>
+                ) : (
+                  <button className='btn btn-primary' onClick={bookRoom}>
+                    Pay Now
+                  </button>
+                )}
+                {/* <button className='btn btn-primary paybutton' onClick={bookRoom}>Pay Now</button>                */}
               </div>
             </div>
 
@@ -84,6 +111,7 @@ function Bookingscreen() {
         </div>)}
       </div>
     </div>
+
   )
 }
 

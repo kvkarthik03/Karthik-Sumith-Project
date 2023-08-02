@@ -15,8 +15,10 @@ function Navbar_1() {
   }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
+      <img height="75" className="d-inline-block align-text-top brandlogo" src="/logo.jpg" alt="stay-zenith-logo" />
+      <Navbar.Brand className="" href="/">StayZenith</Navbar.Brand>
       <Container>
-        <img width="100" height="75" class="d-inline-block align-text-top" src="/logo.jpg" alt="stay-zenith-logo" /><Navbar.Brand className="ml-0" href="#">StayZenith</Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-0">

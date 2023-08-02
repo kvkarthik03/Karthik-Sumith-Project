@@ -57,10 +57,11 @@ img {
 }
 
 .bg-image {
-  background-image: url("/bgimage1.jpg");
+  background-image: url("bgimage2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height:500px;
+  height:auto;
+  padding-bottom: 30px;
 }
 
 /* .quote {
@@ -89,6 +90,7 @@ img {
 
 .bigimg {
   height: 400px;
+  width: 600px;
 }
 
 .btn {
@@ -122,3 +124,77 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+.brandlogo {
+  margin-left: 10px;
+  padding-left: 10px;
+  width: 120px;
+}
+
+.contact-img{
+  background-image: url("https://www.idfreshfood.com/wp-content/uploads/2017/09/contact_us_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.room-card{
+  border:1px solid black;
+  margin-left: 140px;
+  margin-bottom: 50px;
+  background-color: white;
+}
+
+.site-name {
+  font-size: 5rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 10px #800080, 0 0 20px #800080, 0 0 30px #800080;
+}
+
+.book-now-btn {
+  text-decoration: none;
+  background-color: #709085;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #5d7777;
+  transform: scale(1.05);
+}
+
+.carousel-container {
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+.roomsbgimage {
+  background-color: peachpuff;
+}
+
+.carousel-image {
+  height: 400px;
+  width: 600px; 
+  object-fit:cover;
+}
+
+.row-text{
+  padding-top: 20px;
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
