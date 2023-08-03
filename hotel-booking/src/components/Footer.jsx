@@ -15,6 +15,7 @@ return(
             <li class="nav-item"><a href="contactus" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
             
           </ul>
+          <i><p className="text-body-secondary">*This website is intended for educational purposes only, and not meant for commercial use.</p></i>
         </footer>
       </div>
 )
